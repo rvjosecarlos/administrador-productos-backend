@@ -1,0 +1,6 @@
+node_modules
+coverage
+_test_
+.env
+jest.config.js
+package-lock.json
