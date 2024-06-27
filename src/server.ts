@@ -24,6 +24,8 @@ const server = express();
 // Habilitar morgan para obtener informacion de las peticiones entrantes
 server.use(morgan('dev'));
 
+server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions));
+
 // Habilita CORS
 const corsOptions: CorsOptions = {
     origin: function(origin, callback){
@@ -43,7 +45,7 @@ server.use(express.json());
 // Define un prefijo de ruta y despues agrega el router de las rutas
 server.use('/api/products', router);
 
-server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions));
+
 
 // Endpoint para test del server
 server.use('/api', (req: Request, res: Response) =>{
