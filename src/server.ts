@@ -24,6 +24,7 @@ const server = express();
 // Habilitar morgan para obtener informacion de las peticiones entrantes
 server.use(morgan('dev'));
 
+// Endpoint de la documentacion
 server.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions));
 
 // Habilita CORS
