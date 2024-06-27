@@ -31,7 +31,7 @@ const corsOptions: CorsOptions = {
             callback(null, true);
         }
         else{
-            callback(new Error('Error de CORS'), false);
+            callback(new Error(`Error de CORS - ${origin}`), false);
         }
     }
 };
